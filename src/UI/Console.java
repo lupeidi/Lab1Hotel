@@ -51,13 +51,13 @@ public class Console {
 
         try {
             System.out.println("Ce camera?");
-            int stand = Integer.parseInt(scanner.nextLine());
+            int roomNumber = Integer.parseInt(scanner.nextLine());
             System.out.println("Feedbackul oaspetilor");
             String feedback = scanner.nextLine();
             System.out.println("Ratingul oaspetilor");
             int rating = Integer.parseInt(scanner.nextLine());
 
-            service.exitService(stand, feedback, rating);
+            service.exitService(roomNumber, feedback, rating);
         }
 
         catch (RuntimeException runtimeException) {
@@ -82,7 +82,7 @@ public class Console {
             System.out.println("Dati numarul de zile:");
             int stayNumber = Integer.parseInt(scanner.nextLine());
 
-            service.enterService(id, guestNumber, roomNumber, stayNumber);
+            service.enterService(id, roomNumber,guestNumber, stayNumber);
         } catch (RuntimeException runtimeException) {
             System.out.println("Avem erori: " + runtimeException.getMessage());
         }
